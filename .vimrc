@@ -1,63 +1,91 @@
-"Pathogen setup
+"""Takumi Adachi 2014"""
+
+    "Allows arrow keys to work as they should.
+set nocp
 call pathogen#infect()
-"call pathogen#helptags()
-"call pathogen#runtime_append_all_bundles()
+filetype off
 
-"Hotkeys
-
-"Vim setup
-set nu
 syntax on
-set autoindent
-filetype plugin on
-" highlight Pmenu ctermbg=238 gui=bold
-filetype indent on
-set ic
-set hls
-set lbr
-set wildmenu
-set showcmd
-set smartcase
-set backspace=indent,eol,start
-set ruler
-set visualbell
-set mouse=a
-set cmdheight=2
-"colorscheme desert
+filetype indent plugin on
+
+    "Set the encoding to UTF-8
+"set encoding=utf-8
+
+    "Allow the use of utf-8 special characters. Disable after you are finished using it
+"set digraph
+
+    "Maps <Ctrl+c> to copy line.
+nmap <C-c> *y
+    "Maps <Ctrl+A> to highlight everything.
+vmap <C-A> ggVG 
+    "Maps <F3> to next tab.
+nnoremap <F3> :tabnext<CR>
+    "Maps <F4> to previous tab.
+nnoremap <F4> :tabprevious<CR>
+
+    "Tabbed File Explorer and File Explorer.
+map <F2> :Texplore<CR>
+"map <F3> :Explore<CR>
+
+    "Allows arrow keys to work as they should.
+set backspace=2
+    "Show line numbers.
+set number
+
+    "Show eol and tab as characters
+"set listchars=eol:¥,tab:➜➜,trail:·
+set listchars=eol:¥,tab:➜·,trail:·
+"set list
+
+    "Set the number of characters per line.
+"set lines=100
+set columns=300
+    "Wrap lines.
+set wrap
+
+    "Don't let vim make .swp files.
+set noswapfile
+    "Insert tabs on start of line according to shiftwidth.
+"set smarttab 
+    "Make tabs appear as 4 spaces.
 set tabstop=4
-set softtabstop=4
+    "insert spaces when tab key is pressed
 set expandtab
+    "Number of space characters inserted for indentation
 set shiftwidth=4
 
-"Dropbox backup.
-"set directory = ~/Desktop/Dropbox/.swap,~/Desktop/Dropbox/.swp
-"set backupdir = ~/Desktop/Dropbox/.backup
+    "Set the amount of spaces to indent.
+set shiftwidth=4
 
-"Vim omnicompletion
-"set ofu=syntaxcomplete#Complete
-"set tags+=~/Desktop/Dropbox/.vim/systags/tags
-" autocmd FileType python set omnifunc=pythoncomplete#Complete
-"set completeopt=longest,menuone
-"let g:SuperTabDefaultCompletionType = "context"
+    "Autoindents after Linefeeds.
+set autoindent
 
-"C, C++
-"Vim clang_complete
-"let g:clang_user_options='|| exit 0'
+colorscheme desert
 
-"automatic fold save
-"zf zd
-"au BufWinLeave * silent! mkview
-"au BufWinEnter * silent! loadview
+    "Stops vim from creating *.swp.
+set nobackup
+set nowb
+set noswapfile
 
-"taglist
-"map <F2> :TlistToggle<cr>
+    "Enable mouse.
+set mouse=a
 
-"Notes.vim
-"let g:notes_directory = '~/Desktop/Dropbox/notes'
-"let g:notes_suffix = '.notes'
-"let g:notes_smart_quotes = 1
+    "Always show current Position.
+"set ruler
 
-"Latex
-"set grepprg=grep\ -nH\ $*
-"let g:tex_flavor='latex'
-"let g:Tex_ViewRule_pdf = 'Preview'
+"set background=dark
+
+    "Always Show status line.
+"set laststatus=2
+
+    "Returns true if paste mode is enabled.
+"function! HasPaste()
+    "if &paste
+        "return 'PASTE MODE   '
+    "en
+    "return ''
+"endfunction
+
+    "Format status line.
+"set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l
+
